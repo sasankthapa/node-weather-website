@@ -11,7 +11,7 @@ const forecast = (longitude,lalitude,callback) =>{
         }else if(body.error){
             callback("Unable to find location, retry",undefined);
         }else{
-            callback(undefined,`It is currently ${body.current.temperature} degrees out with ${body.current.precip}% chance of humidity`);
+            callback(undefined,`It is currently ${body.current.temperature} but it feels like ${body.current.feelslike}. It is currently ${body.current.is_day==='no'?"night":"day"}. ${body.current.weather_descriptions}.`);
         }
     })
 }
